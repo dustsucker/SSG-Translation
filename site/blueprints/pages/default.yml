@@ -1,0 +1,9 @@
+title: 
+  en: Default 
+  de: Standard
+preset: page
+
+fields:
+  text:
+    type: textarea
+    size: large
