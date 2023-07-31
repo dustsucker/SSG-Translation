@@ -1,0 +1,6 @@
+[submodule "site/plugin/feed"]
+	path = site/plugin/feed
+	url = https://github.com/bnomei/kirby3-feed
+[submodule "site/plugin/static-site-generator"]
+	path = site/plugin/static-site-generator
+	url = https://github.com/d4l-data4life/kirby3-static-site-generator
