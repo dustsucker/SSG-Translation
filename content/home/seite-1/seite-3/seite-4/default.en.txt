@@ -1,9 +1,0 @@
-Title: Page 4
-
-----
-
-Slug: page-4
-
-----
-
-Text: This is the fifth text.

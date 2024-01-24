@@ -1,9 +1,0 @@
-Title: Page 1
-
-----
-
-Slug: page-1
-
-----
-
-Text: This is the seconde text.
