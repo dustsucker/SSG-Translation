@@ -34,3 +34,18 @@ If you are familiar with Git, you can clone Kirby's Plainkit repository from Git
 
 © 2009 Bastian Allgeier
 [getkirby.com](https://getkirby.com) · [License agreement](https://getkirby.com/license)
+
+
+# $kirby-router()->->call($routePath, 'GET'); returns content for the Wrong Language
+
+I have a multi-language site with the following structure:
+
+```
+/
+    en/
+        test/
+    es/
+        test/
+```
+
+Both test sites routes are Virtual Pages create in a plugin.
