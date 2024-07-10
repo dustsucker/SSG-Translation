@@ -1,13 +1,13 @@
 <?php
 // Hole die aktuelle Sprache
-$currentLanguage = kirby()->language()->code();
+$lang= kirby()->language()->code();
 
 // Hole die Seite
 $page = page('test');
 
 // Überprüfe, ob die Seite existiert und lade den Inhalt in der aktuellen Sprache
 if ($page) {
-	$content = $page->content($currentLanguage);
+	$content = $page->content();
 	$contentArray = $content->toArray();
 
 	var_dump($contentArray); // Überprüfe die Inhalte
@@ -30,6 +30,6 @@ if ($page) {
 		<td><?= $kirby->language() ?></td>
 		<td><?= $page->title() ?></td>
 		<td><?= t("translationTest") ?></td>
-		<td><?= $page->data() ?></td>
+		<td><?= $page->data($lang) ?></td>
 	</tr>
 </table>
