@@ -36,25 +36,25 @@ If you are familiar with Git, you can clone Kirby's Plainkit repository from Git
 [getkirby.com](https://getkirby.com) · [License agreement](https://getkirby.com/license)
 
 
-# `$kirby->router()->call($routePath, 'GET')` gibt den Inhalt in der falschen Sprache zurück
+# $kirby->router()->call($routePath, 'GET') returns the content in the wrong language
 
-Ich habe eine mehrsprachige Webseite mit der folgenden Struktur:
+I have a multilingual website with the following structure:
 
 ```
 /
-    en/
+    de/
         test/
-    es/
+    en/
         test/
 ```
 
-Both test sites routes are Virtual Pages create in a plugin.
+Both test sites' routes are virtual pages created in a plugin.
 
 I use the static site generator plugin to generate the site.
 
-When I run the generate.php it creates the site in the correct language, but when I try to generate the site in the other language, it returns the content of the first language.
+When I run the generate.php, it creates the site in the correct language, but when I try to generate the site in the other language, it returns the content of the first language.
 
-So i tried dumpling the content in the generate plugin where it gets it from kirby:
+So I tried dumping the content in the generate plugin where it gets it from Kirby:
 
 ```php
 protected function _getRouteContent(string $routePath)
@@ -82,13 +82,11 @@ protected function _getRouteContent(string $routePath)
 	}
 ```
 
-it returns the right paths but not the correct content for the paths.
+It returns the right paths but not the correct content for the paths.
 
-I also tried to dump the content of the ```$content = $page->content($currentLanguage); ```and it returns the correct data for the language.
-If i use ```$content = $page->content();``` it returns the wrong content but only in the generated pages if is start the kirby router myself and test it in the Browser everything works.
+I also tried to dump the content of the $content = $page->content($currentLanguage); and it returns the correct data for the language. If I use $content = $page->content(); it returns the wrong content but only in the generated pages. If I start the Kirby router myself and test it in the browser, everything works.
 
-So I read some more on the router stuff and found the LanguageRouter and tried to use it in the generate plugin:
- but the routes are empty:
+So I read some more on the router stuff and found the LanguageRouter and tried to use it in the generate plugin: but the routes are empty:
 
 ```protected function _getRouteContent(string $routePath, string $languageCode = null)
 	{
@@ -123,18 +121,17 @@ So I read some more on the router stuff and found the LanguageRouter and tried t
 	}
 ```
 
-I have also created a demo repo for you to check it out:
-https://github.com/dustsucker/SSG-Translation
+I have also created a demo repo for you to check it out: https://github.com/dustsucker/SSG-Translation
 
-it uses git submodules so you have to initialize them first:
+It uses git submodules so you have to initialize them first:
 
 ```bash
 git submodule init
 git submodule update
 ```
 
-then you can run the generate.php and see the output.
+Then you can run the generate.php and see the output.
 
-In the test-plugin you can see the routes for the pages and the content of the pages.
+In the test-plugin, you can see the routes for the pages and the content of the pages.
 
 I hope you can help me with this problem.
